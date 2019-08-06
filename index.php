@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>test</title>
+        <title>testheroku</title>
     </head>
     <body>
     	<?php
