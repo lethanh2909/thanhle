@@ -19,24 +19,23 @@
             ));
             echo "done!!!!!!";
 
-            $sql = "SELECT cId, cName, cDescription from Catalogue";
-            $stmt = $pdo->prepare($sql);
-            // thiet lap kieudu lieu tra ve
-            $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            $stmt->execute();
-            $resultSet = $stmt->fetchAll();
+            $sql = "SELECT cName, cDescription from Catalogue";
+            $result = mysqli_query($sql);
 
-
-        ?>
-        <ul>
-        <?php  
-            foreach ($resultSet as $row) {
-            echo '<li>' .
-                $row['cName'] . ' --' . $row['cDescription'] 
-                . '</li>';
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo "id: " . $row["cName"]. " - Name: " . $row["cDescription"]. " " . $row["cName"]. "<br>";
+                }
+            } else {
+                echo "0 results";
             }
+
+
+
+
         ?>
-        </ul>
+        
     </body>
 </html>
 
