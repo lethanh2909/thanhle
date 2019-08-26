@@ -1,0 +1,13 @@
+h1,h2,h3,h4,h5,h6 {
+    font-family: Bahnschrift;
+    color: #e21212;
+}
+div.about-style{
+    font-family: Bahnschrift;
+}
+
+div.address-style{
+    font-family: Lucida Console;
+    font-weight: bold;
+}
+
