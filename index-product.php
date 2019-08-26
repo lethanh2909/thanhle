@@ -5,17 +5,18 @@
     </head>
     <body>
         <?php
-            $servername = "ec2-54-227-245-146.compute-1.amazonaws.com";
-            $username = "oovwrvolhffwkp";
-            $password = "699e9667b9d3b149280d7dee6050728e6b4272087a3fb95b6d19d3173208b001";
-            $dbname = "darage7r31a8r";
+            //$pdo = new PDO('pgsql:host=localhost;port=5432;dbname=GWCourses', 'postgres', '12345678');
+            //echo "done!!!!!!";
+            $db = parse_url(getenv("DATABASE_URL"));
 
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            } 
+            $pdo = new PDO("pgsql:" . sprintf(
+                "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+                $db["host"],
+                $db["port"],
+                $db["user"],
+                $db["pass"],
+                ltrim($db["path"], "/")
+            ));
             echo "done!!!!!!";
 
             $sql = "SELECT cName, cDescription from Catalogue";
