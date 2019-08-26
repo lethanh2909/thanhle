@@ -19,10 +19,19 @@
             ));
             echo "done!!!!!!";
 
-            
+            $result = $myPDO->query("SELECT cId, cName, cDescription from Catalogue");        
 
 
         ?>
+        <ul>
+        <?php  
+            foreach ($resultSet as $row) {
+            echo '<li>' .
+                $row['cName'] . ' --' . $row['cDescription'] 
+                . '</li>';
+            }
+        ?>
+        </ul>
         
     </body>
 </html>
