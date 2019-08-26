@@ -1,13 +1,12 @@
  
 <?php
     include("database.php");
-    //load database of catalogue
-    $query  = "SELECT cId, cName, cDescription from Catalogue";
-    $result  = queryMysql($query );
-    $error1 = $msg1 = "";
-    if (!$result ){
-        $error1 = "Couldn't load data, please try again.";
-    }
+    $sql = "SELECT cId, cName, cDescription from Catalogue";
+            $stmt = $pdo->prepare($sql);
+            // thiet lap kieudu lieu tra ve
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $stmt->execute();
+            $resultSet = $stmt->fetchAll();
     
     //load catalogue
     echo "<div class='side_menu'>";   
