@@ -18,7 +18,7 @@
             ));
             echo "done!!!!!!";
 
-            $sql = "SELECT cName, cDescription from Catalogue";
+            $sql = $pdo->query("SELECT cName, cDescription from Catalogue");
             $result = mysqli_query($sql);
 
             if (mysqli_num_rows($result) > 0) {
