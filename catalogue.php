@@ -1,6 +1,6 @@
  
 <?php
-    require_once './database.php';
+    include("database.php");
     //load database of catalogue
     $query  = "SELECT cId, cName, cDescription from Catalogue";
     $result  = queryMysql($query );
