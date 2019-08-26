@@ -12,3 +12,12 @@
     echo "<div class='side_menu'>";   
         
 ?>
+<ul>
+        <?php  
+            foreach ($resultSet as $row) {
+            echo '<li>' .
+                $row['cName'] . ' --' . $row['cDescription'] 
+                . '</li>';
+            }
+        ?>
+        </ul>
