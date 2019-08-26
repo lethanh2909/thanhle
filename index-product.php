@@ -17,25 +17,13 @@
                 $db["pass"],
                 ltrim($db["path"], "/")
             ));
+            echo "done!!!!!!";
 
-            $sql = "SELECT cId, cName, cDescription from Catalogue";
-            $stmt = $pdo->prepare($sql);
-            // thiet lap kieudu lieu tra ve
-            $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            $stmt->execute();
-            $resultSet = $stmt->fetchAll();
+            
 
 
         ?>
-        <ul>
-        <?php  
-            foreach ($resultSet as $row) {
-            echo '<li>' .
-                $row['cName'] . ' --' . $row['cDescription'] 
-                . '</li>';
-            }
-        ?>
-        </ul>
+        
     </body>
 </html>
 
