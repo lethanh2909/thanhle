@@ -5,8 +5,7 @@
     </head>
     <body>
         <?php
-            //$pdo = new PDO('pgsql:host=localhost;port=5432;dbname=GWCourses', 'postgres', '12345678');
-            //echo "done!!!!!!";
+            
             $db = parse_url(getenv("DATABASE_URL"));
 
             $pdo = new PDO("pgsql:" . sprintf(
