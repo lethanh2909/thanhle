@@ -25,7 +25,7 @@
         ?>
         <ul>
         <?php  
-            foreach ($resultSet as $row) {
+            foreach ($result as $row) {
             echo '<li>' .
                 $row['cName'] . ' --' . $row['cDescription'] 
                 . '</li>';
