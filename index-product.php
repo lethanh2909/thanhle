@@ -5,20 +5,20 @@
     </head>
     <body>
         <?php
-            
-            $db = parse_url(getenv("DATABASE_URL"));
+            $servername = "ec2-54-227-245-146.compute-1.amazonaws.com";
+            $username = "oovwrvolhffwkp";
+            $password = "699e9667b9d3b149280d7dee6050728e6b4272087a3fb95b6d19d3173208b001";
+            $dbname = "darage7r31a8r";
 
-            $pdo = new PDO("pgsql:" . sprintf(
-                "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-                $db["host"],
-                $db["port"],
-                $db["user"],
-                $db["pass"],
-                ltrim($db["path"], "/")
-            ));
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            } 
             echo "done!!!!!!";
 
-            $sql = $pdo->query("SELECT cName, cDescription from Catalogue");
+            $sql = "SELECT cName, cDescription from Catalogue";
             $result = mysqli_query($sql);
 
             if (mysqli_num_rows($result) > 0) {
