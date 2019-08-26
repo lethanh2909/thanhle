@@ -13,7 +13,7 @@
                 "host=%s;port=%s;user=%s;password=%s;dbname=%s",
                 $db["host"],
                 $db["port"],
-                $db["user"],
+                $db["us131er"],
                 $db["pass"],
                 ltrim($db["path"], "/")
             ));
