@@ -19,16 +19,10 @@
             ));
             echo "done!!!!!!";
 
-            $sql = "SELECT cName, cDescription from Catalogue";
-            $result = mysqli_query($sql);
-
-            if (mysqli_num_rows($result) > 0) {
-                // output data of each row
-                while($row = mysqli_fetch_assoc($result)) {
-                    echo "id: " . $row["cName"]. " - Name: " . $row["cDescription"]. " " . $row["cName"]. "<br>";
-                }
-            } else {
-                echo "0 results";
+            $stmt = $pdo->query("SELECT cName, cDescription from Catalogue");
+            $stmt->execute([$limit, $offset]); 
+            while ($row = $stmt->fetch()) {
+                echo $row['name']."<br />\n";
             }
 
 
