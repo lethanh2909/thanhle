@@ -19,10 +19,10 @@
             ));
             echo "done!!!!!!";
 
-            $stmt = $pdo->query("SELECT cName, cDescription from Catalogue");
-            $stmt->execute([$limit, $offset]); 
-            while ($row = $stmt->fetch()) {
-                echo $row['cName']."<br />\n";
+            $sql= ("SELECT cName, cDescription from Catalogue");
+            $stmt = $pdo->query($sql); 
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            echo $row['cName'];
             }
 
 
