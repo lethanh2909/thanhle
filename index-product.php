@@ -19,7 +19,7 @@
             ));
             echo "done!!!!!!";
 
-            $sql= ("SELECT cName, cDescription from Catalogue");
+            $sql= ("SELECT cName from Catalogue");
             $stmt = $pdo->query($sql); 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             echo $row['cName'];
