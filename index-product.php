@@ -18,25 +18,24 @@
                 ltrim($db["path"], "/")
             ));
             echo "done!!!!!!";
+            $sql = "SELECT cId, cName, cDescription from Catalogue";
+            $stmt = $pdo->prepare($sql);
+            // thiet lap kieudu lieu tra ve
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $stmt->execute();
+            $resultSet = $stmt->fetchAll();
 
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     
-        
-        $stmt = $conn->prepare("SELECT cName, cDescription from Catalogue"); 
-         
-        
-        $stmt->execute();
-     
-       
-        $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-         
-        
-        $result = $stmt->fetchAll();
-         
-        
-        foreach ($result as $item){
-            echo $item['cName'] . ' - '. $item['cDescription'];
-        }
+
+        ?>
+        <ul>
+        <?php  
+            foreach ($resultSet as $row) {
+            echo '<li>' .
+                $row['cName'] . ' --' . $row['cDescription'] 
+                . '</li>';
+            }
+        ?>
+        </ul>
             
     
 
