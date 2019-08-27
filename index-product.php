@@ -38,7 +38,9 @@
             echo $item['cName'] . ' - '. $item['cDescription'];
         }
             
-
+        catch(PDOException $e) {
+         echo "Lỗi: " . $e->getMessage();
+}
 
 
 
