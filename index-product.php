@@ -23,7 +23,7 @@
             $stmt = $pdo->query($sql); 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             echo $row['cName'];
-            }
+            
 
 
 
