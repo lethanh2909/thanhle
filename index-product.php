@@ -9,7 +9,7 @@
             //echo "done!!!!!!";
             $db = parse_url(getenv("DATABASE_URL"));
 
-            $pdo = new PDO("pgsql:" . sprintf(
+            $conn = new PDO("pgsql:" . sprintf(
                 "host=%s;port=%s;user=%s;password=%s;dbname=%s",
                 $db["host"],
                 $db["port"],
@@ -19,10 +19,24 @@
             ));
             echo "done!!!!!!";
 
-            $sql= "SELECT cName from Catalogue";
-            $stmt = $pdo->query($sql); 
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            echo $row['cName'];
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     
+        // Sử đụng Prepare 
+        $stmt = $conn->prepare("SELECT cName, cDescription from Catalogue"); 
+         
+        // Thực thi câu truy vấn
+        $stmt->execute();
+     
+        // Khai báo fetch kiểu mảng kết hợp
+        $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+         
+        // Lấy danh sách kết quả
+        $result = $stmt->fetchAll();
+         
+        // Lặp kết quả
+        foreach ($result as $item){
+            echo $item['cName'] . ' - '. $item['cDescription'];
+        }
             
 
 
