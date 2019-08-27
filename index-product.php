@@ -18,7 +18,7 @@
                 ltrim($db["path"], "/")
             ));
             echo "done!!!!!!";
-            $sql = "SELECT cId, cName, cDescription from Catalogue";
+            $sql = "SELECT cid, cname, cdescription from Catalogue";
         $stmt = $pdo->prepare($sql);
         //Thiết lập kiểu dữ liệu trả về
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -30,7 +30,7 @@
         <?php  
             foreach ($resultSet as $row) {
             echo '<li>' .
-                $row['cName'] . ' --' . $row['cDescription'] 
+                $row['cname'] . ' --' . $row['cdescription'] 
                 . '</li>';
             }
         ?>
