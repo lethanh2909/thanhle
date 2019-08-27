@@ -22,7 +22,7 @@
             $stmt = $pdo->query("SELECT cName, cDescription from Catalogue");
             $stmt->execute([$limit, $offset]); 
             while ($row = $stmt->fetch()) {
-                echo $row['name']."<br />\n";
+                echo $row['cName']."<br />\n";
             }
 
 
