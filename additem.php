@@ -82,9 +82,9 @@ if(isset($_POST['insert']))
             <?php
                 $query = "SELECT cid, cname FROM Catalogue";
                 $batches = queryMysql($query);
-                while ($batch = mysqli_fetch_array($batches)) {
-                    $cId = $batch[0];
-                    $cName = $batch[1];
+                foreach ($resultSet as $row) {
+                    $cId = $row[0];
+                    $cName = $row[1];
                     echo "<option value='$cId'>$cName</option>";
                 }
             ?>
