@@ -9,8 +9,8 @@ if(isset($_POST['insert']))
     $iname = $_POST['iname'];
     $idescription = $_POST['idescription'];
     $iprice = $_POST['iprice'];
-    $idtatus = $_POST['istatus'];
-    $idize = $_POST['isize'];    
+    $istatus = $_POST['istatus'];
+    $isize = $_POST['isize'];    
     $iimage = $_POST['iimage'];
    // $extension = "";
    
@@ -24,10 +24,7 @@ if(isset($_POST['insert']))
    //     $destination = "./images/item/$iimage";
    //     //Move the file from temp loc => to our image folder
    //     move_uploaded_file($temp_name, $destination);
-    $catalogueid = $_POST['catalogueid'];
-
-    
-   
+    $catalogueid = $_POST['catalogueid'];   
     
         
     // mysql query to insert data
@@ -42,7 +39,8 @@ if(isset($_POST['insert']))
     if($pdoExec)
     {
         echo 'Data Inserted';
-    }else{
+    }
+    else{
         echo 'Data Not Inserted';
     }
 }
