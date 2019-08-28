@@ -15,13 +15,13 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
     $sql = "INSERT INTO item (iid, iname, idescription, iprice, istatus, isize, iimage, catalogueid) VALUES (:iid, :iname, :idescription, :iprice, :istatus, :isize, :catalogueid)";
     
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
-    $stmt->bindValue(':iname', $_POST['iname'], PDO::PARAM_STR);
-    $stmt->bindValue(':idescription', $_POST['idescription'], PDO::PARAM_STR);
-    $stmt->bindValue(':iprice', $_POST['iprice'], PDO::PARAM_STR);
-    $stmt->bindValue(':isize', $_POST['isize'], PDO::PARAM_STR);
-    $stmt->bindValue(':iimage', $_POST['iimage'], PDO::PARAM_STR);
-    $stmt->bindValue(':catalogueid', $_POST['catalogueid'], PDO::PARAM_STR);
+    $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_INT);
+    $stmt->bindValue(':iname', $_POST['iname'], PDO::PARAM_INT);
+    $stmt->bindValue(':idescription', $_POST['idescription'], PDO::PARAM_INT);
+    $stmt->bindValue(':iprice', $_POST['iprice'], PDO::PARAM_INT);
+    $stmt->bindValue(':isize', $_POST['isize'], PDO::PARAM_INT);
+    $stmt->bindValue(':iimage', $_POST['iimage'], PDO::PARAM_INT);
+    $stmt->bindValue(':catalogueid', $_POST['catalogueid'], PDO::PARAM_INT);
     $pdoExec = $stmt->execute();
     
         // check if mysql insert query successful
