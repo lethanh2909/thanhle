@@ -1,31 +1,18 @@
 <?php
 require_once './database.php';
 
-if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'], $_POST['istatus'], $_POST['isize'], $_POST['catalogueid']))
+if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'], $_POST['istatus'], $_POST['isize'], $_POST['iimage'], $_POST['catalogueid']))
 {
     
     // get values form input text and number
     
     
-    $iimage = "";
-    $extension = "";
+   
     
-    if (isset($_FILES['iimage']) && $_FILES['iimage']['size'] != 0) {
-        $temp_name = $_FILES['iimage']['tmp_name'];
-        $name = $_FILES['iimage']['name'];
-        $parts = explode(".", $name);
-        $lastIndex = count($parts) - 1;
-        $extension = $parts[$lastIndex];
-        $iImage = "$iid.$extension";
-        $destination = "./images/item/$iimage";
-        //Move the file from temp loc => to our image folder
-        move_uploaded_file($temp_name, $destination);
-    }
-    $catalogueid = $_POST['catalogueid'];
         
     // mysql query to insert data
 
-    $sql = "INSERT INTO item (iid, iname, idescription, iprice, istatus, isize, catalogueid) VALUES (:iid, :iname, :idescription, :iprice, :istatus, :isize, :catalogueid)";
+    $sql = "INSERT INTO item (iid, iname, idescription, iprice, istatus, isize, iimage, catalogueid) VALUES (:iid, :iname, :idescription, :iprice, :istatus, :isize, :catalogueid)";
     
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
@@ -33,6 +20,7 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
     $stmt->bindValue(':idescription', $_POST['idescription'], PDO::PARAM_STR);
     $stmt->bindValue(':iprice', $_POST['iprice'], PDO::PARAM_STR);
     $stmt->bindValue(':isize', $_POST['isize'], PDO::PARAM_STR);
+    $stmt->bindValue(':iimage', $_POST['iimage'], PDO::PARAM_STR);
     $stmt->bindValue(':catalogueid', $_POST['catalogueid'], PDO::PARAM_STR);
     $pdoExec = $stmt->execute();
     
@@ -76,7 +64,7 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
 
             <input type="text" name="isize" required placeholder="size"><br><br>
 
-            <input type="file" name="iImage" required placeholder="Image"><br>
+            <input type="text" name="iimage" required placeholder="Image"><br>
 
             <select name="catalogueId">
             <?php
