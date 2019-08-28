@@ -11,21 +11,22 @@ if(isset($_POST['insert']))
     $iprice = $_POST['iprice'];
     $idtatus = $_POST['istatus'];
     $idize = $_POST['isize'];    
-    $iimage = "";
-    $extension = "";
+    $iimage = $_POST['iimage'];
+   // $extension = "";
    
-    if (isset($_FILES['iimage']) && $_FILES['iimage']['size'] != 0) {
-        $temp_name = $_FILES['iimage']['tmp_name'];
-        $name = $_FILES['iimage']['name'];
-        $parts = explode(".", $name);
-        $lastIndex = count($parts) - 1;
-        $extension = $parts[$lastIndex];
-        $iImage = "$iid.$extension";
-        $destination = "./images/item/$iimage";
-        //Move the file from temp loc => to our image folder
-        move_uploaded_file($temp_name, $destination);
-    }
+    //if (isset($_FILES['iimage']) && $_FILES['iimage']['size'] != 0) {
+    //    $temp_name = $_FILES['iimage']['tmp_name'];
+    //    $name = $_FILES['iimage']['name'];
+    //    $parts = explode(".", $name);
+    //    $lastIndex = count($parts) - 1;
+    //    $extension = $parts[$lastIndex];
+    //    $iImage = "$iid.$extension";
+   //     $destination = "./images/item/$iimage";
+   //     //Move the file from temp loc => to our image folder
+   //     move_uploaded_file($temp_name, $destination);
     $catalogueid = $_POST['catalogueid'];
+
+    
    
     
         
@@ -77,7 +78,7 @@ if(isset($_POST['insert']))
 
             <input type="text" name="isize" required placeholder="size"><br><br>
 
-            <input type="file" name="iimage" required placeholder="Image"><br>
+            <input type="text" name="iimage" required placeholder="Image"><br>
 
             <select name="catalogueid">
             <?php
