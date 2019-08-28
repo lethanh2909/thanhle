@@ -29,7 +29,7 @@ if(isset($_POST['insert']))
         
     // mysql query to insert data
 
-    $sql = "INSERT INTO Item (iid, iname, idescription, iprice, istatus, isize, iimage, catalogueid) 
+    $sql = "INSERT INTO 'Item' ('iid', 'iname', 'idescription', 'iprice', 'istatus', 'isize', 'iimage', 'catalogueid') 
                     values (:iid, :iname, :idescription, :iprice, :istatus, :isize, :iimage, :catalogueid)";
     
     $stmt = $pdo->prepare($sql);    
