@@ -14,7 +14,7 @@ require_once './database.php';
             $message = $message."Added successfully";
         }  
         
-}
+
 ?>
 <br>
 
