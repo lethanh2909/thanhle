@@ -13,13 +13,14 @@ if(isset($_POST['insert']))
     $idize = ($_POST['isize']);    
     $iimage = "";
     $extension = "";
-    if (isset($_FILES['iImage']) && $_FILES['iImage']['size'] != 0) {
-        $temp_name = $_FILES['iImage']['tmp_name'];
-        $name = $_FILES['iImage']['name'];
+   
+    if (isset($_FILES['iimage']) && $_FILES['iimage']['size'] != 0) {
+        $temp_name = $_FILES['iimage']['tmp_name'];
+        $name = $_FILES['iimage']['name'];
         $parts = explode(".", $name);
         $lastIndex = count($parts) - 1;
         $extension = $parts[$lastIndex];
-        $iImage = "$iId.$extension";
+        $iImage = "$iid.$extension";
         $destination = "./images/item/$iImage";
         //Move the file from temp loc => to our image folder
         move_uploaded_file($temp_name, $destination);
