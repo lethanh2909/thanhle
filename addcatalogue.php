@@ -1,8 +1,8 @@
 <?php
 require_once './database.php';
-if (isset($_POST['cName'])) {
-    $cName = sanitizeString($_POST['cName']);
-    $cDescription = sanitizeString($_POST['cDescription']);
+if (isset($_POST['cname'])) {
+    $cName = sanitizeString($_POST['cname']);
+    $cDescription = sanitizeString($_POST['cdescription']);
     $error = $message = "";
     
         $data = [
