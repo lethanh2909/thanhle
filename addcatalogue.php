@@ -7,7 +7,7 @@ require_once './database.php';
         $stmt->bindParam(':cname', $_POST['cname'], PDO::PARAM_STR);      
         $stmt->bindParam(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
         $stmt->execute(); 
-
+        $resultSet = $stmt->fetchAll();
         if (!$resultSet) {
             $error = $error."Adding error, please try again";
         } else {
