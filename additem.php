@@ -12,7 +12,8 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
         
     // mysql query to insert data
 
-    $sql = "INSERT INTO Item (iid, iname, idescription, iprice, istatus, isize, iimage, catalogueid) VALUES (:iid, :iname, :idescription, :iprice, :istatus, :isize, :iimage, :catalogueid)";
+    $sql = "INSERT INTO Item (iid, iname, idescription, iprice, istatus, isize, iimage, catalogueid) 
+                    values (:iid, :iname, :idescription, :iprice, :istatus, :isize, :iimage, :catalogueid)";
     
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
@@ -67,7 +68,7 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
 
             <input type="text" name="iimage" required placeholder="Image"><br>
 
-            <select name="catalogueId">
+            <select name="catalogueid">
             <?php
                 $sql = "SELECT cid, cname FROM Catalogue";
                 $stmt = $pdo->prepare($sql);
