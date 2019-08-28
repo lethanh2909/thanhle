@@ -62,7 +62,7 @@ if(isset($_POST['insert']))
 
     </head>
     <body>
-        <form action="php_insert_data_in_mysql_database_using_pdo.php" method="post">
+        <form action="additem.php" method="post">
 
             <input type="text" name="iid" required placeholder="ID"><br><br>
 
@@ -94,7 +94,7 @@ if(isset($_POST['insert']))
             ?>
             </select><br><br>
 
-            <input type="submit" name="insert" value="Insert Data">
+            <input type="submit" value="Insert Data">
 
         </form>
 
