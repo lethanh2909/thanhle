@@ -43,7 +43,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <a href="#"><img src="images/logo.PNG" style="width:60px; border-style: solid" class="w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
         <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-bar w3-black">
-        <a href="index2.php" class="w3-bar-item w3-button w3-right fa fa-male w3-hover-red">ADMIN</a>  
+        <a href="admin.php" class="w3-bar-item w3-button w3-right fa fa-male w3-hover-red">ADMIN</a>  
     </div>
         
   </header>
@@ -51,12 +51,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   
     <div class="container w3-padding-large" id="portfolio">
         <div class="w3-bottombar">
-            <form>
-                <input type="hidden" name="direct" value="search">
-                <input type="text" name="key_word" value="" class="w3-input w3-white w3-border" placeholder=""> 
-                <button type="submit" class="w3-button w3-white w3-border">Search</button>
-            </form>
-
+            
             <div class="w3-panel w3-border w3-sand w3-round-large w3-padding-16">        
                 <p class="w3-xlarge w3-serif " style="text-decoration: underline">CATALOGUE</p>             
 
