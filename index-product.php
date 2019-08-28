@@ -69,8 +69,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                 foreach ($resultSet as $row) 
                 {    
                     echo "<tr>";
-                        for($i=1;$i<=10;$i++)
-                        {
+                        
                             echo "<th>";
                                 if($row!=false)
                                 {
@@ -86,8 +85,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                                 }
                             echo "</th>";
 
-                            
-                        }
+                                if($i!=10)
+                                {
+                                    $row = $stmt->fetch();
+                                }
+                        
                     echo "</tr>";
                 }
                 echo "</table>";
