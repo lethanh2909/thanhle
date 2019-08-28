@@ -12,7 +12,7 @@ if (isset($_POST['cname'])) {
         $sql = "INSERT INTO Catalogue(cname, cdescription)"
                 . "values('$cName' , '$cDescription')";
         $stmt= $pdo->prepare($sql);
-        $stmt->execute($data);
+        
 
         if (!$data) {
             $error = $error."Adding error, please try again";
