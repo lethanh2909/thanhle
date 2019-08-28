@@ -1,18 +1,14 @@
 <?php
 require_once './database.php';
 
-        $sql = "INSERT INTO Catalogue(cname, cdescription)"
-                . "values(:cname, :cdescription)";
+        $sql = "INSERT INTO Catalogue(cname, cdescription)
+                values(:cname, :cdescription)";
         $stmt= $pdo->prepare($sql);
         $stmt->bindParam(':cname', $_POST['cname'], PDO::PARAM_STR);      
         $stmt->bindParam(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
         $stmt->execute(); 
+
         
-        if (!$resultSet) {
-            $error = $error."Adding error, please try again";
-        } else {
-            $message = $message."Added successfully";
-        }  
         
 
 ?>
