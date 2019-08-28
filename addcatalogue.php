@@ -1,7 +1,7 @@
 <?php
 require_once './database.php';
 
-       foreach($_POST){ 
+       if( isset($_POST['cname'], $_POST['cdescription']) ){ 
         $sql = "INSERT INTO Catalogue(cname, cdescription)
                 values(:cname, :cdescription)";
         $stmt= $pdo->prepare($sql);
