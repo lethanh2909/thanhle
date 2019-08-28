@@ -74,7 +74,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                                     $ID = $row ['cid'];
                                     $link="?direct=show_product&id=".$ID;        
                                     echo "<a href='$link' class='w3-button w3-large w3-border'>" ;
-                                    $Name = $row ['cname'];                                               
+                                    $Name = $row ['cid'];                                               
                                     echo "$Name";
                                 }
                                  else 
