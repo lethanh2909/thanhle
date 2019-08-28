@@ -12,7 +12,7 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
         
     // mysql query to insert data
 
-    $sql = "INSERT INTO item (iid, iname, idescription, iprice, istatus, isize, iimage, catalogueid) VALUES (:iid, :iname, :idescription, :iprice, :istatus, :isize, :iimage, :catalogueid)";
+    $sql = "INSERT INTO Item (iid, iname, idescription, iprice, istatus, isize, iimage, catalogueid) VALUES (:iid, :iname, :idescription, :iprice, :istatus, :isize, :iimage, :catalogueid)";
     
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
