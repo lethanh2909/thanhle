@@ -7,7 +7,14 @@ require_once './database.php';
         $stmt= $pdo->prepare($sql);
         $stmt->bindValue(':cname', $_POST['cname'], PDO::PARAM_STR);      
         $stmt->bindValue(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
-        $stmt->execute();
+        $pdoExec = $stmt->execute();
+
+        if($pdoExec)
+        {
+            echo 'Data Inserted';
+        }else{
+            echo 'Data Not Inserted';
+        }
     }
 
         
