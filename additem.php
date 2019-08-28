@@ -80,8 +80,12 @@ if(isset($_POST['insert']))
 
             <select name="catalogueId">
             <?php
-                $query = "SELECT cid, cname FROM Catalogue";
-                $batches = queryMysql($query);
+                $sql = "SELECT cid, cname FROM Catalogue";
+                $stmt = $pdo->prepare($sql);
+                //Thiết lập kiểu dữ liệu trả về
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                $stmt->execute();
+                $resultSet = $stmt->fetchAll();
                 foreach ($resultSet as $row) {
                     $cId = $row[0];
                     $cName = $row[1];
