@@ -87,8 +87,8 @@ if(isset($_POST['insert']))
                 $stmt->execute();
                 $resultSet = $stmt->fetchAll();
                 foreach ($resultSet as $row) {
-                    $cId = $row[0];
-                    $cName = $row[1];
+                    $cId = $row['cid'];
+                    $cName = $row['cname'];
                     echo "<option value='$cId'>$cName</option>";
                 }
             ?>
