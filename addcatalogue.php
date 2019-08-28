@@ -10,7 +10,7 @@ require_once './database.php';
         $stmt= $pdo->prepare($sql);
         $stmt->bindParam(':cname', $_POST['cname'], PDO::PARAM_STR);      
         $stmt->bindParam(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
-        $stmt->execute($data);
+        
 
         
         
