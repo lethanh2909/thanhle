@@ -4,11 +4,6 @@ require_once './database.php';
 if(isset($_POST['insert']))
 {
     
-    catch (PDOException $exc) {
-        echo $exc->getMessage();
-        exit();
-    }
-
     // get values form input text and number
     
     $iid = $_POST['iid'];
