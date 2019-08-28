@@ -1,8 +1,8 @@
 <?php
 require_once './database.php';
-if (isset($_POST['cname'])) {
-    $cName = sanitizeString($_POST['cname']);
-    $cDescription = sanitizeString($_POST['cdescription']);
+if (isset($_POST['cName'])) {
+    $cName = sanitizeString($_POST['cName']);
+    $cDescription = sanitizeString($_POST['cDescription']);
     $error = $message = "";
     
         $data = [
@@ -13,7 +13,7 @@ if (isset($_POST['cname'])) {
                 . "values('$cName' , '$cDescription')";
         $stmt= $pdo->prepare($sql);
         
-        
+
         if (!$data) {
             $error = $error."Adding error, please try again";
         } else {
