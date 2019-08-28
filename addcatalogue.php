@@ -1,21 +1,12 @@
 <?php
 require_once './database.php';
-if (isset($_POST['cname'])) {
-    $cName = sanitizeString($_POST['cname']);
-    $cDescription = sanitizeString($_POST['cdescription']);
-    $error = $message = "";
-    
-        $data = [
-                    'cname' => $cName,
-                    'cdescription' => $cDescription,                    
-                ];
+
         $sql = "INSERT INTO Catalogue(cname, cdescription)"
-                . "values(?,?)";
+                . "values(:cname, :cdescription)";
         $stmt= $pdo->prepare($sql);
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $stmt->execute();
-        $resultSet = $stmt->fetchAll();
-        
+        $stmt->bindParam(':cname', $_POST['cname'], PDO::PARAM_STR);      
+        $stmt->bindParam(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
+        $stmt->execute(); 
 
         if (!$resultSet) {
             $error = $error."Adding error, please try again";
