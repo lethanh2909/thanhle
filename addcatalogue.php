@@ -17,14 +17,14 @@ require_once './database.php';
 <form action = "addcatalogue.php" method = "post">
     <fieldset class = "fitContent">
         <legend>Add Catalogue</legend>
-        <span class="error"><?php echo $error; ?></span><br>
-        Name<br>
-        <input type="text" name="cname"   required /><br>
-        Description<br>
+        
+        <br>Name<br>
+        <input type="text" name="cname"   required />
+        <br>Description<br>
         <textarea name="cdescription" ></textarea>
         <br><br>
         <input type="submit" value="Add" /><br>
-        <span><?php echo $message; ?></span><br>
+        
     </fieldset>
     
 </form>
