@@ -33,7 +33,14 @@ if(isset($_POST['insert']))
                     values (:iid, :iname, :idescription, :iprice, :istatus, :isize, :iimage, :catalogueid)";
     
     $stmt = $pdo->prepare($sql);    
-    $pdoExec = $stmt->execute();
+    $pdoExec = $stmt->execute(array(
+        ":iid"=>$iid,
+        ":iname"=>$iname,
+        ":idescription"=>$idescription,
+        ":iprice"=>$iprice,
+        ":istatus"=>$istatus,
+        ":iimage"=>$iimage,
+        ":catalogueid"=>$catalogueid));
     
         // check if mysql insert query successful
     if($pdoExec)
