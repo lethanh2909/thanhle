@@ -10,7 +10,7 @@ if (isset($_POST['cname'])) {
                     'cdescription' => $cDescription,                    
                 ];
         $sql = "INSERT INTO Catalogue(cname, cdescription)"
-                . "values('$cName' , '$cDescription')";
+                . "values(?,?)";
         $stmt= $pdo->prepare($sql);
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $stmt->execute();
@@ -31,10 +31,10 @@ if (isset($_POST['cname'])) {
     <fieldset class = "fitContent">
         <legend>Add Catalogue</legend>
         <span class="error"><?php echo $error; ?></span><br>
-        NamE<br>
-        <input type="text" name="cname"   required /><br>
+        Name<br>
+        <input type="text" name="cName"   required /><br>
         Description<br>
-        <textarea name="cdescription" ></textarea>
+        <textarea name="cDescription" ></textarea>
         <br><br>
         <input type="submit" value="Add" /><br>
         <span><?php echo $message; ?></span><br>
