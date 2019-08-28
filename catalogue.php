@@ -7,5 +7,5 @@
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $stmt->execute();
         $resultSet = $stmt->fetchAll();
-    echo "<div class='side_menu'>";    
+    echo "<div class='topnav'>";    
 ?>
