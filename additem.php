@@ -1,11 +1,22 @@
 <?php
 require_once './database.php';
 
-if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'], $_POST['istatus'], $_POST['isize'], $_POST['iimage'], $_POST['catalogueid']))
+if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'], $_POST['istatus'], $_POST['isize'], $_POST['catalogueid']))
 {
+    $iimage = "";
+    $extension = "";
     
-    // get values form input text and number
-    
+    if (isset($_FILES['iimage']) && $_FILES['iimage']['size'] != 0) {
+        $temp_name = $_FILES['iimage']['tmp_name'];
+        $name = $_FILES['iimage']['name'];
+        $parts = explode(".", $name);
+        $lastIndex = count($parts) - 1;
+        $extension = $parts[$lastIndex];
+        $iImage = "$iId.$extension";
+        $destination = "./images/item/$iimage";
+        //Move the file from temp loc => to our image folder
+        move_uploaded_file($temp_name, $destination);
+    }
     
    
     
@@ -66,7 +77,7 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
 
             <input type="text" name="isize" required placeholder="size"><br><br>
 
-            <input type="text" name="iimage" required placeholder="Image"><br>
+            <input type="file" name="iimage" required placeholder="Image"><br>
 
             <select name="catalogueid">
             <?php
