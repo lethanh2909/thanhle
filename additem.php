@@ -1,7 +1,5 @@
 <?php
-
-// php code -> 1bestcsharp.blogspot.com
-// php insert data to mysql database using PDO
+require_once './database.php'
 
 if(isset($_POST['insert']))
 {
