@@ -1,12 +1,16 @@
 <?php
 require_once './database.php';
 
+        $data = [
+                    'cname' => $cname,
+                    'cdescription' => $cdescription,                    
+                ];
         $sql = "INSERT INTO Catalogue(cname, cdescription)
                 values(:cname, :cdescription)";
         $stmt= $pdo->prepare($sql);
         $stmt->bindParam(':cname', $_POST['cname'], PDO::PARAM_STR);      
         $stmt->bindParam(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
-        $stmt->execute(array(:name=>$variable) ) 
+        $stmt->execute($data);
 
         
         
