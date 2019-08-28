@@ -31,10 +31,10 @@ if (isset($_POST['cname'])) {
     <fieldset class = "fitContent">
         <legend>Add Catalogue</legend>
         <span class="error"><?php echo $error; ?></span><br>
-        Name<br>
-        <input type="text" name="cName"   required /><br>
+        NamE<br>
+        <input type="text" name="cname"   required /><br>
         Description<br>
-        <textarea name="cDescription" ></textarea>
+        <textarea name="cdescription" ></textarea>
         <br><br>
         <input type="submit" value="Add" /><br>
         <span><?php echo $message; ?></span><br>
