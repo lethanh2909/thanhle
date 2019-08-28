@@ -66,32 +66,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
                 <?php
                 echo "<table >";
-                while ($row = $stmt->fetch()) 
-                {    
-                    echo "<tr>";
-                        for($i=1;$i<=10;$i++)
-                        {
-                            echo "<td width='78px'  >";
-                                if($row!=false)
-                                {
-                                    $ID = $row ['cid'];
-                                    $link="?direct=show_product&id=".$ID;        
-                                    echo "<a href='$link' class='w3-button w3-large w3-border'>" ;
-                                    $Name = $row ['cname'];                                               
-                                    echo "$Name";
-                                }
-                                 else 
-                                {
-                                    echo "&nbsp;";
-                                }
-                            echo "</td>";
-                            if($i!=10)
-                            {
-                                $row = $stmt->fetch();
-                            }
-                        }
-                    echo "</tr>";
-                }
+                        foreach ($resultSet as $row) {
+                    echo '<li>' .
+                        $row['cname'] . ' --' . $row['cdescription'] 
+                        . '</li>';
+                    }
                 echo "</table>";
                 ?>
             </div>
