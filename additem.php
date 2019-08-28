@@ -4,7 +4,7 @@ require_once './database.php';
 if(isset($_POST['insert']))
 {
     
-    } catch (PDOException $exc) {
+    catch (PDOException $exc) {
         echo $exc->getMessage();
         exit();
     }
