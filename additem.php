@@ -5,12 +5,12 @@ if(isset($_POST['insert']))
 {
     
     // get values form input text and number
-    $iid = ($_POST['iid']);
-    $iname = ($_POST['iname']);
-    $idescription = ($_POST['idescription']);
-    $iprice = ($_POST['iprice']);
-    $idtatus = ($_POST['istatus']);
-    $idize = ($_POST['isize']);    
+    $iid = $_POST['iid'];
+    $iname = $_POST['iname'];
+    $idescription = $_POST['idescription'];
+    $iprice = $_POST['iprice'];
+    $idtatus = $_POST['istatus'];
+    $idize = $_POST['isize'];    
     $iimage = "";
     $extension = "";
    
@@ -21,11 +21,11 @@ if(isset($_POST['insert']))
         $lastIndex = count($parts) - 1;
         $extension = $parts[$lastIndex];
         $iImage = "$iid.$extension";
-        $destination = "./images/item/$iImage";
+        $destination = "./images/item/$iimage";
         //Move the file from temp loc => to our image folder
         move_uploaded_file($temp_name, $destination);
     }
-    $catalogueid = ($_POST['catalogueid']);
+    $catalogueid = $_POST['catalogueid'];
    
     
         
