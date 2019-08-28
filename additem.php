@@ -25,7 +25,7 @@ if(isset($_POST['insert']))
         $destination = "./images/item/$iimage";
         //Move the file from temp loc => to our image folder
         move_uploaded_file($temp_name, $destination);
-
+    }
     $catalogueid = $_POST['catalogueid'];
         
     // mysql query to insert data
