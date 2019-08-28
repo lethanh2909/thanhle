@@ -1,53 +1,36 @@
 <?php
 require_once './database.php';
 
-if(isset($_POST['insert']))
+if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'], $_POST['istatus'], $_POST['isize'], $_POST['iimage'], $_POST['catalogueid']))
 {
     
     // get values form input text and number
-    $iid = $_POST['iid'];
-    $iname = $_POST['iname'];
-    $idescription = $_POST['idescription'];
-    $iprice = $_POST['iprice'];
-    $istatus = $_POST['istatus'];
-    $isize = $_POST['isize'];    
-    $iimage = $_POST['iimage'];
-   // $extension = "";
+    
+    
    
-    //if (isset($_FILES['iimage']) && $_FILES['iimage']['size'] != 0) {
-    //    $temp_name = $_FILES['iimage']['tmp_name'];
-    //    $name = $_FILES['iimage']['name'];
-    //    $parts = explode(".", $name);
-    //    $lastIndex = count($parts) - 1;
-    //    $extension = $parts[$lastIndex];
-    //    $iImage = "$iid.$extension";
-   //     $destination = "./images/item/$iimage";
-   //     //Move the file from temp loc => to our image folder
-   //     move_uploaded_file($temp_name, $destination);
-    $catalogueid = $_POST['catalogueid'];   
     
         
     // mysql query to insert data
 
-    $sql = "INSERT INTO 'Item' ('iid', 'iname', 'idescription', 'iprice', 'istatus', 'isize', 'iimage', 'catalogueid') 
+    $sql = "INSERT INTO Item (iid, iname, idescription, iprice, istatus, isize, iimage, catalogueid) 
                     values (:iid, :iname, :idescription, :iprice, :istatus, :isize, :iimage, :catalogueid)";
     
-    $stmt = $pdo->prepare($sql);    
-    $pdoExec = $stmt->execute(array(
-        ":iid"=>$iid,
-        ":iname"=>$iname,
-        ":idescription"=>$idescription,
-        ":iprice"=>$iprice,
-        ":istatus"=>$istatus,
-        ":iimage"=>$iimage,
-        ":catalogueid"=>$catalogueid));
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
+    $stmt->bindValue(':iname', $_POST['iname'], PDO::PARAM_STR);
+    $stmt->bindValue(':idescription', $_POST['idescription'], PDO::PARAM_STR);
+    $stmt->bindValue(':iprice', $_POST['iprice'], PDO::PARAM_STR);
+    $stmt->bindValue(':istatus', $_POST['istatus'], PDO::PARAM_STR);
+    $stmt->bindValue(':isize', $_POST['isize'], PDO::PARAM_STR);
+    $stmt->bindValue(':iimage', $_POST['iimage'], PDO::PARAM_STR);
+    $stmt->bindValue(':catalogueid', $_POST['catalogueid'], PDO::PARAM_STR);
+    $pdoExec = $stmt->execute();
     
         // check if mysql insert query successful
     if($pdoExec)
     {
         echo 'Data Inserted';
-    }
-    else{
+    }else{
         echo 'Data Not Inserted';
     }
 }
