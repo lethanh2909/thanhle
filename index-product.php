@@ -102,14 +102,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             include("direction.php");
         ?>
 
-       
-        <table>                
-            <tr>
-            <?php
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-                {
+       <?php
+        echo "<table>";                
+            
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+            {    
+                echo "<tr>";
                     for($i=1;$i<=3;$i++)
-                    {                   
+                    {
                         echo "<td align='center' width='328px' height='228px' >";
                             if($row!=false)
                             {
@@ -146,11 +146,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                             $row = $stmt->fetch();
                         }
                     }
-                }
-            ?>    
-            </tr>            
-        </table>
-                
+                echo "</tr>";
+            }
+        echo "</table>";
+        ?>        
     </div> 
     <!--End of Product container-->
     
