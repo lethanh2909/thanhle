@@ -108,7 +108,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                 foreach ($resultSet as $row) 
                 {
                    
-                    //echo "<td align='center' width='328px' height='228px' >";
+                    echo "<td align='center' width='328px' height='228px' >";
                         if($row!=false)
                         {
                             $iId = $row['iid'];
@@ -139,7 +139,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                         {
                             echo "&nbsp;";
                         }
-                    //echo "</td>";
+                    echo "</td>";
                         if($i!=3)
                         {
                             $row = $stmt->fetch();
