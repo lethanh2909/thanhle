@@ -102,6 +102,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             include("direction.php");
         ?>
 
+        <div background='red'>
         <?php
         
             foreach ($resultSet as $row) 
@@ -139,10 +140,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                 {
                     $row = $stmt->fetch();
                 }
-            }
-                    
-                
-        ?>        
+            }              
+        ?>
+        </div>        
     </div> 
     <!--End of Product container-->
     
