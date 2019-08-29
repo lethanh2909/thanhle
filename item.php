@@ -2,7 +2,7 @@
         require_once './database.php';
         //load items
         $id=$_GET['id'];
-        $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item where catalogueid='$id'";
+        $sql = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item where catalogueid='$id'";
         $stmt = $pdo->prepare($sql);
         //Thiết lập kiểu dữ liệu trả về
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -12,7 +12,7 @@
             $error = "Couldn't load data, please try again.";
         }      
 
-echo "<div class='item_menu'>";        
+//echo "<div class='item_menu'>";        
          
                
     
