@@ -61,7 +61,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
                 <?php
                 echo "<table >";                
-                    foreach ($resultSet as $row)
+                    while  ($row = $stmt->fetch())
                     {
                         echo "<tr>";
                     
@@ -82,10 +82,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                                 }
                             echo "</th>";
 
-                            if($i!=5)
-                            {
-                                $row = $stmt->fetch();
-                            }
+                            
                         }
                     }
                     echo "</tr>";
