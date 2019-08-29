@@ -59,39 +59,43 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                     include("catalogue.php");
                 ?>
 
-                <?php
-                echo "<table >";                
-                    
-                    echo "<tr>";
-                    foreach ($resultSet as $row)
-                    {
-                        for($i=1;$i<=5;$i++)
-                        {
-                            echo "<th>";
-                                if($row!=false)
-                                {
-                                    $ID = $row ['cid'];
-                                    $link="?direct=show_product&id=".$ID;        
-                                    echo "<a href='$link' class='w3-button w3-large w3-border'>" ;
-                                    $Name = $row ['cname'];                                               
-                                    echo "$Name";
-                                }
-                                 else 
-                                {
-                                    echo "&nbsp;";
-                                }
-                            echo "</th>";
+                <div class="section">
+                    <div class="container">
+                        <?php
+                        $numOfCols = 4;
+                        $rowCount = 0;
+                        $bootstrapColWidth = 12 / $numOfCols;
+                        ?>
+                        <div class="row">
+                            <?php foreach ($resultSet as $row) { ?>
+                                <div class="col-md-<?php echo $bootstrapColWidth;?>">
+                                    <div class="well" style="width: 250px;height: auto;">
+                                        <div><?php
+                                            $ID = $row ['cid'];
+                                            $link="?direct=show_product&id=".$ID; 
+                                            echo "<a href='$link' class='w3-button w3-large w3-border'>" ; 
+                                        ?></div>
 
-                            if($i!=5)
-                            {
-                                $row = $stmt->fetch();
-                            }
-                        }
-                    }
-                    echo "</tr>";
-                
-                echo "</table>";
-                ?>
+                                        <?php 
+                                            $Name = $row ['cname'];                                               
+                                            echo "$Name";
+                                        ?> 
+                                    </div>
+                                </div>
+                                
+                                <?php
+                                    $rowCount++;
+                                    if($rowCount % $numOfCols == 0) 
+                                    {
+                                        echo '</div><div class="row">'.'<br>'.'<br>';
+                                    }
+                                ?>
+                        <?php };?>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
     </div>
@@ -105,7 +109,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <?php
         echo "<table>";
                 
-            echo "<tr";
+            echo "<tr float='left'>";
                 foreach ($resultSet as $row) 
                 {
                    
