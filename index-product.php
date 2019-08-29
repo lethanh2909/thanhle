@@ -105,7 +105,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <?php
         echo "<table>";
                 
-                echo "<tr>";
+                echo "<tr float='left'>";
                 foreach ($resultSet as $row) 
             {
                     for($i=1;$i<=3;$i++)
@@ -125,11 +125,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                                 //$link_detail="?direct=product_detail&id=".$iId;
 
                                 echo "<a href='$link_detail'>";
-                                    echo "<img src='$link_image' width='200px'>";
+                                echo "<img src='$link_image' width='200px'>" .$iName .;
                                 echo "</a>";
                                 echo "<br>";  
 
-                                echo "<a href='$link_detail'>";
+                                
                                     echo $iName;
                                 echo "</a>";
                                 echo "<br>";  
