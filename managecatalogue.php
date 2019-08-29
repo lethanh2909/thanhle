@@ -9,15 +9,16 @@
     </tr>
     <?php
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $cId = $row['cid'];
         $cName = $row['cname'];
         $cDescription = $row['cdescription'];
         echo "<tr>";
         echo "<td>$cName</td>";
-        echo "<td>$cDescription</td>";
+        echo "<td>$cId</td>";
         ?>
         <td>
             <form class="frminline" action="deletecatalogue.php" method="post" onsubmit="return confirmDelete();">
-                <input type="hidden" name="cid" value="<?php $ID = $row ['cid']; $link="?direct=show_product&id=".$ID; echo "<a href='$link'>" ?>" />
+                <input type="hidden" name="cid" value="<?php echo $row['cid'] ?>" />
                 <input type="submit" value="Delete" />
             </form>
             <form class="frminline" action="" method="post">
