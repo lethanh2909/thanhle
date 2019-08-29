@@ -2,7 +2,7 @@
         require_once './functions.php';
         //load items
         $id=$_GET['id'];
-        $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item where catalogueid='$cid'";
+        $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item where catalogueid='$id'";
         $stmt = $pdo->prepare($sql);
         //Thiết lập kiểu dữ liệu trả về
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
