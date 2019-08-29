@@ -17,7 +17,7 @@
         ?>
         <td>
             <form class="frminline" action="deletecatalogue.php" method="post" onsubmit="return confirmDelete();">
-                <input type="hidden" name="cid" value="<?php echo $row['cid'] ?>" />
+                <input type="hidden" name="cid" value="<?php $Id = $row['cid']; echo "$Id"; ?>" />
                 <input type="submit" value="Delete" />
             </form>
             <form class="frminline" action="" method="post">
