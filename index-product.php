@@ -66,7 +66,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                     echo "<tr>";
                         for($i=1;$i<=7;$i++)
                         {
-                            echo "<th>";
+                            echo "<th width='78px'>";
                                 if($row!=false)
                                 {
                                     $ID = $row ['cid'];
