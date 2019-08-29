@@ -110,7 +110,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                 {
                     for($i=1;$i<=3;$i++)
                     {
-                        echo "<td align='center' width='328px' height='228px' >";
+                        
                             if($row!=false)
                             {
                                 $iId = $row['iid'];
@@ -123,7 +123,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
                                 $link_image = "./images/item/$iImage";
                                 //$link_detail="?direct=product_detail&id=".$iId;
-
+echo "<td align='center' width='328px' height='228px' >";
                                 echo "<a href='$link_detail'>";
                                     echo "<img src='$link_image' width='200px'>";
                                 echo "</a>";
@@ -144,7 +144,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                             echo "</td>";
                             if($i!=3)
                             {
-                                foreach ($resultSet as $row);
+                                $row = $stmt->fetch();
                             }
                     }
                 }
