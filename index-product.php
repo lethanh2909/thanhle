@@ -60,12 +60,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                 ?>
 
                 <?php
-                echo "<table >";                
-                    
+                echo "<table >";
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+                {    
                     echo "<tr>";
-                    foreach ($resultSet as $row)
-                    {
-                        for($i=1;$i<=5;$i++)
+                        for($i=1;$i<=7;$i++)
                         {
                             echo "<th>";
                                 if($row!=false)
@@ -82,14 +81,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                                 }
                             echo "</th>";
 
-                            if($i!=5)
+                            if($i!=7)
                             {
                                 $row = $stmt->fetch();
                             }
                         }
-                    }
                     echo "</tr>";
-                
+                }
                 echo "</table>";
                 ?>
             </div>
