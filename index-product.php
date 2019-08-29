@@ -125,7 +125,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                                 //$link_detail="?direct=product_detail&id=".$iId;
 
                                 echo "<a href='$link_detail'>";
-                                echo "<img src='$link_image' width='200px'>" .$iName .;
+                                echo "<img src='$link_image' width='200px'>" .$iName;
                                 echo "</a>";
                                 echo "<br>";  
 
