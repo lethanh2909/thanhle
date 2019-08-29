@@ -11,3 +11,7 @@ div.address-style{
     font-weight: bold;
 }
 
+.container{
+	float: left;
+}
+
