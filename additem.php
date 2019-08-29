@@ -12,7 +12,7 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
         $parts = explode(".", $name);
         $lastIndex = count($parts) - 1;
         $extension = $parts[$lastIndex];
-        $iImage = "$iid.$extension";
+        $iimage = "$iid.$extension";
         $destination = "./images/item/$iimage";
         //Move the file from temp loc => to our image folder
         move_uploaded_file($temp_name, $destination);
