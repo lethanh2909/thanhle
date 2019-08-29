@@ -107,48 +107,47 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         echo "<table>";
             foreach ($resultSet as $row) 
             {    
-                for($i=1;$i<=3;$i++)
+                echo "<tr>";
+                    for($i=1;$i<=3;$i++)
                     {
-                        echo "<tr>";
-                    
-                            echo "<td align='center' width='328px' height='228px' >";
-                                if($row!=false)
-                                {
-                                    $iId = $row['iid'];
-                                    $iName = $row['iname'];
-                                    $iDescription = $row['idescription'];
-                                    $iPrice = $row['iprice'];
-                                    $iStatus = $row['istatus'];
-                                    $iSize = $row['isize'];
-                                    $iImage = $row['iimage'];
-
-                                    $link_image = "./images/item/$iimage";
-                                    $link_detail="?direct=product_detail&id=".$iId;
-
-                                    echo "<a href='$link_detail'>";
-                                        echo "<img src='$link_image' width='200px'>";
-                                    echo "</a>";
-                                    echo "<br>";  
-
-                                    echo "<a href='$link_detail'>";
-                                        echo $iname;
-                                    echo "</a>";
-                                    echo "<br>";  
-
-                                    echo "Price: ".$iprice," $";
-                                    echo "<br>";
-                                }
-                                 else 
-                                {
-                                    echo "&nbsp;";
-                                }
-                            echo "</td>";
-                            if($i!=3)
+                        echo "<td align='center' width='328px' height='228px' >";
+                            if($row!=false)
                             {
-                                $row = $stmt->fetch();
+                                $iId = $row['iid'];
+                                $iName = $row['iname'];
+                                $iDescription = $row['idescription'];
+                                $iPrice = $row['iprice'];
+                                $iStatus = $row['istatus'];
+                                $iSize = $row['isize'];
+                                $iImage = $row['iimage'];
+
+                                $link_image = "./images/item/$iImage";
+                                //$link_detail="?direct=product_detail&id=".$iId;
+
+                                echo "<a href='$link_detail'>";
+                                    echo "<img src='$link_image' width='200px'>";
+                                echo "</a>";
+                                echo "<br>";  
+
+                                echo "<a href='$link_detail'>";
+                                    echo $iname;
+                                echo "</a>";
+                                echo "<br>";  
+
+                                echo "Price: ".$iPrice," $";
+                                echo "<br>";
                             }
+                             else 
+                            {
+                                echo "&nbsp;";
+                            }
+                        echo "</td>";
+                        if($i!=3)
+                        {
+                            $row = $stmt->fetch();
+                        }
                     }
-                        echo "</tr>";
+                echo "</tr>";
             }
         echo "</table>";
         ?>        
