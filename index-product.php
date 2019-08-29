@@ -101,13 +101,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <?php 
             include("direction.php");
         ?>
-<div class="pcontainer">
-        <?php        
-                
-            
+
+       
+        <table>                
+            <tr>
+            <?php
                 foreach ($resultSet as $row) 
-                {
-                   
+                {                   
                     echo "<td align='center' width='328px' height='228px' >";
                         if($row!=false)
                         {
@@ -145,10 +145,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                             $row = $stmt->fetch();
                         }
                 }
-           
-            
-        
-        ?>        
-</div> 
+            ?>    
+            </tr>            
+        </table>
+                
+    </div> 
     <!--End of Product container-->
     
