@@ -60,12 +60,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                 ?>
 
                 <?php
-                echo "<table >";
-                
-                    
-                    echo "<tr>";
+                echo "<table >";                
                     foreach ($resultSet as $row)
                     {
+                        echo "<tr>";
+                    
                         for($i=1;$i<=5;$i++)
                         {
                             echo "<th>";
@@ -105,13 +104,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
         <?php
         echo "<table>";
-                
+            foreach ($resultSet as $row) 
+            {    
                 echo "<tr>";
                     for($i=1;$i<=3;$i++)
                     {
                         echo "<td align='center' width='328px' height='228px' >";
-                        foreach ($resultSet as $row) 
-                        {
                             if($row!=false)
                             {
                                 $iId = $row['iid'];
@@ -142,7 +140,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                             {
                                 echo "&nbsp;";
                             }
-                        }
                         echo "</td>";
                         if($i!=3)
                         {
