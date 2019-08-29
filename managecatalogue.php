@@ -16,12 +16,12 @@
         echo "<td>$cDescription</td>";
         ?>
         <td>
-            <form class="frminline" action="" method="post" onsubmit="return confirmDelete();">
-                <input type="hidden" name="cId" value="<?php echo $row[0] ?>" />
+            <form class="frminline" action="deletecatalogue.php" method="post" onsubmit="return confirmDelete();">
+                <input type="hidden" name="cid" value="<?php echo $row['cid'] ?>" />
                 <input type="submit" value="Delete" />
             </form>
             <form class="frminline" action="" method="post">
-                <input type="hidden" name="cId" value="<?php echo $row[0] ?>" />
+                <input type="hidden" name="cId" value="<?php echo $row['cid'] ?>" />
                 <input type="submit" value="Update" />
             </form>
         </td>
