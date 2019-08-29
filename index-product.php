@@ -52,8 +52,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <div class="container w3-padding-large" id="portfolio">
         <div class="w3-bottombar">
             
-            <div class="w3-panel w3-border w3-sand w3-round-large w3-padding-16">        
-                <p class="w3-xlarge w3-serif " style="text-decoration: underline">CATALOGUE</p>             
+            <div class="w3-panel w3-border w3-yellow w3-round-large w3-padding-16">        
+                <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">__________________________________CATALOGUE__________________________________</p>             
 
                 <?php 
                     include("catalogue.php");
@@ -71,7 +71,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                                 {
                                     $ID = $row ['cid'];
                                     $link="?direct=show_product&id=".$ID;        
-                                    echo "<a href='$link' class='w3-button w3-white w3-border w3-border-red w3-round-large'>" ;
+                                    echo "<a href='$link' class='w3-button w3-border w3-border-red w3-round-large'>" ;
                                     $Name = $row ['cname'];                                               
                                     echo "$Name";
                                 }
