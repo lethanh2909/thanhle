@@ -105,12 +105,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <?php
         echo "<table>";
                 
-                echo "<tr class="container">";
+                echo "<tr>";
                 foreach ($resultSet as $row) 
             {
                     for($i=1;$i<=3;$i++)
                     {
-                        echo "<td align='center' width='328px' height='228px' >";
+                        echo "<td width='328px' height='228px' >";
                             if($row!=false)
                             {
                                 $iId = $row['iid'];
