@@ -3,7 +3,7 @@
 <title>Lego World</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -59,49 +59,45 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                     include("catalogue.php");
                 ?>
 
-                <div class="section">
-                    <div class="container">
-                        <?php
-                        $numOfCols = 4;
-                        $rowCount = 0;
-                        $bootstrapColWidth = 12 / $numOfCols;
-                        ?>
-                        <div class="row">
-                            <?php foreach ($resultSet as $row) { ?>
-                                <div class="col-md-<?php echo $bootstrapColWidth;?>">
-                                    <div class="well" style="width: 250px;height: auto;">
-                                        <div><?php
-                                            $ID = $row ['cid'];
-                                            $link="?direct=show_product&id=".$ID; 
-                                            echo "<a href='$link' class='w3-button w3-large w3-border'>" ; 
-                                        ?></div>
+                <?php
+                echo "<table >";                
+                    
+                    echo "<tr>";
+                    foreach ($resultSet as $row)
+                    {
+                        for($i=1;$i<=5;$i++)
+                        {
+                            echo "<th>";
+                                if($row!=false)
+                                {
+                                    $ID = $row ['cid'];
+                                    $link="?direct=show_product&id=".$ID;        
+                                    echo "<a href='$link' class='w3-button w3-large w3-border'>" ;
+                                    $Name = $row ['cname'];                                               
+                                    echo "$Name";
+                                }
+                                 else 
+                                {
+                                    echo "&nbsp;";
+                                }
+                            echo "</th>";
 
-                                        <?php 
-                                            $Name = $row ['cname'];                                               
-                                            echo "$Name";
-                                        ?> 
-                                    </div>
-                                </div>
-                                
-                                <?php
-                                    $rowCount++;
-                                    if($rowCount % $numOfCols == 0) 
-                                    {
-                                        echo '</div><div class="row">'.'<br>'.'<br>';
-                                    }
-                                ?>
-                        <?php };?>
-                    </div>
-                </div>
-
-
-
+                            if($i!=5)
+                            {
+                                $row = $stmt->fetch();
+                            }
+                        }
+                    }
+                    echo "</tr>";
+                
+                echo "</table>";
+                ?>
             </div>
         </div>
     </div>
     
   <!-- Product container-->  
-    <div class="w3-bottombar">
+    <div class="pcontainer">
         <?php 
             include("direction.php");
         ?>
