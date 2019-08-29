@@ -13,8 +13,9 @@ div.address-style{
 
 .pcontainer{
 	float:left;     /*Nằm bên trái*/
-    width: 700px;   /*Rộng 700px*/
+    width: 900px;   /*Rộng 700px*/
     height: 300px;  /*Cao 300px*/
     background: red;/*Nền màu đỏ*/
 }
+
 
