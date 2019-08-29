@@ -97,7 +97,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </div>
     
   <!-- Product container-->  
-    <div class="w3-bottombar">
+    <div>
         <?php 
             include("direction.php");
         ?>
@@ -130,7 +130,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                                 echo "<br>";  
 
                                 
-                                    echo $iName;
+                                echo $iName;
                                 echo "</a>";
                                 echo "<br>";  
 
