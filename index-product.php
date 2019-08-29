@@ -61,10 +61,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
                 <?php
                 echo "<table >";                
+                    
+                    echo "<tr>";
                     foreach ($resultSet as $row)
                     {
-                        echo "<tr>";
-                    
                         for($i=1;$i<=5;$i++)
                         {
                             echo "<th>";
