@@ -104,9 +104,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
         <?php
         echo "<table>";
-            foreach ($resultSet as $row) 
-            {    
+                
                 echo "<tr>";
+                foreach ($resultSet as $row) 
+                {
                     for($i=1;$i<=3;$i++)
                     {
                         echo "<td align='center' width='328px' height='228px' >";
@@ -140,14 +141,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                             {
                                 echo "&nbsp;";
                             }
-                        echo "</td>";
-                        if($i!=3)
-                        {
-                            $row = $stmt->fetch();
-                        }
+                            echo "</td>";
+                            if($i!=3)
+                            {
+                                $row = $stmt->fetch();
+                            }
                     }
+                }
                 echo "</tr>";
-            }
+            
         echo "</table>";
         ?>        
     </div> 
