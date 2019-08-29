@@ -1,5 +1,5 @@
 <?php
-        require_once './functions.php';
+        require_once './database.php';
         //load items
         $id=$_GET['id'];
         $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item where catalogueid='$id'";
