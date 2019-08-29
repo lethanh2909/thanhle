@@ -106,7 +106,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <table>                
             <tr>
             <?php
-                foreach ($resultSet as $row) 
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
                 {
                     for($i=1;$i<=3;$i++)
                     {                   
@@ -144,7 +144,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                         echo "</td>";
                         if($i!=3)
                         {
-                            $resultSet = $stmt->fetchAll();
+                            $row = $stmt->fetch();
                         }
                     }
                 }
