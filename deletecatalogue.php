@@ -6,7 +6,7 @@
     
     $sql = "DELETE FROM Catalogue WHERE cid = '$cid'";
     $stmt= $pdo->prepare($sql);
-    $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_STR);
+    $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_INT);
     $pdoExec = $stmt->execute();
     
 }
