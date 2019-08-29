@@ -120,7 +120,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                                 $iStatus = $row['istatus'];
                                 $iSize = $row['isize'];
                                 $iImage = $row['iimage'];
-
                                 $link_image = "./images/item/$iImage";
                                 //$link_detail="?direct=product_detail&id=".$iId;
 
