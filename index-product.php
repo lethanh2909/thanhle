@@ -97,7 +97,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </div>
     
   <!-- Product container-->  
-    <div class="pcontainer">
+    <div class="w3-bottombar">
         <?php 
             include("direction.php");
         ?>
@@ -105,7 +105,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <?php
         echo "<table>";
                 
-            echo "<tr float='left'>";
+            echo "<tr>";
                 foreach ($resultSet as $row) 
                 {
                    
