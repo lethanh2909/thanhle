@@ -25,8 +25,14 @@
 	}
 	if(isset($_POST['iid']))
 	{
-		$sql = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item WHERE iid = :iid";
-        $stmt = $pdo->prepare($sql);        
+		$sql = "SELECT iid, iname, idescription, iprice, istatus, isize FROM Item WHERE iid = :iid";
+        $stmt = $pdo->prepare($sql);  
+        $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
+	    $stmt->bindValue(':iname', $_POST['iname'], PDO::PARAM_STR);
+	    $stmt->bindValue(':idescription', $_POST['idescription'], PDO::PARAM_STR);
+	    $stmt->bindValue(':iprice', $_POST['iprice'], PDO::PARAM_STR);
+	    $stmt->bindValue(':istatus', $_POST['istatus'], PDO::PARAM_STR);
+	    $stmt->bindValue(':isize', $_POST['isize'], PDO::PARAM_STR);      
         $stmt->execute();
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
