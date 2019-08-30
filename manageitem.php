@@ -79,8 +79,7 @@ th, td {
         <table align='center'>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Description</th>
+                <th>Name</th>                
                 <th>Price</th>
                 <th>Status</th>
                 <th>Size</th>              
@@ -105,7 +104,7 @@ th, td {
                     echo "<tr>";
                     echo "<td>$iId</td>";                
             ?>
-                <td><input type="text" size="5" id="iname" name="iname" required value="<?php echo $row['iname']; ?>"/></td>             
+                <td><input type="text" size="5" id="iname" name="iname" required value="<?php echo $row['iname']; ?>"/></td>          
                 
                 
                 <td><input type="text" size="5" name="iprice" required value="<?php echo $row['iprice']; ?>"/></td>
