@@ -4,10 +4,10 @@
 <?php
 	if(isset($_POST['iid'], $_POST['iname'], $_POST['iprice'], $_POST['istatus'], $_POST['isize']))
 	{
-	    $sql = "UPDATE Catalogue SET iname = :iname, iname=:iname, iprice=:iprice, istatus=:istatus, isize=:isize WHERE iid = :iid";
-	    $stmt= $pdo->prepare($sql);
+	    $sql = "UPDATE Item SET iid = :iid, iname=:iname, iprice=:iprice, istatus=:istatus, isize=:isize WHERE iid = :iid";
+	    
 	    $stmt = $pdo->prepare($sql);
-	    $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
+	    $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_INT);
 	    $stmt->bindValue(':iname', $_POST['iname'], PDO::PARAM_STR);
 	    
 	    $stmt->bindValue(':iprice', $_POST['iprice'], PDO::PARAM_STR);
