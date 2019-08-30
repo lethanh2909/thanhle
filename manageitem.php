@@ -104,7 +104,9 @@ th, td {
                     echo "<tr>";
                     echo "<td>$iId</td>";                
             ?>
-            <form action="manageitem.php" method="post">
+            <form action="updateitem.php" method="post">
+
+                <input type="hidden" name="iid" value="<?php echo $row['iid'] ?>" />
                 <td><input type="text" size="5" name="iname" required value="<?php echo $row['iname']; ?>"/></td>          
                 
                 
@@ -113,19 +115,19 @@ th, td {
                 <td><input type="text" size="5" name="istatus" required value="<?php echo $row['istatus']; ?>"/></td>
                 
                 <td><input type="text" size="5" name="isize" required value="<?php echo $row['isize']; ?>"/></td>
-            </form>
+            
                 <?php echo "<td ><img src='$link_image' width='200px'></td>"; ?>
-                
+
+                <input type="submit" value="Update" />
+            </form>    
                 <td>
                     <form class="frminline" action="deleteitem.php" method="post" onsubmit="return confirmDelete();">
                         <input type="hidden" name="iid" value="<?php echo $row['iid'] ?>" />
                         <input type="submit" value="Delete" />
                     </form>
-                    <form class="frminline" action="updateitem.php" method="post">
-                        <input type="hidden" name="iid" value="<?php echo $row['iid'] ?>" />
-                        <input type="submit" value="Update" />
-                    </form>
+                    
                 </td>
+
                 <?php
                 echo "</tr>";
             }
