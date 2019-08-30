@@ -23,6 +23,22 @@
 	        echo 'Data Not updated';
 	    }
 	}
+	if(isset($_POST['iid']))
+	{
+		$sql = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item WHERE iid = :iid";
+        $stmt = $pdo->prepare($sql);        
+        $stmt->execute();
+
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+        {
+            $iid = $row['iid'];
+            $iname = $row['iname'];
+            $idescription = $row['idescription'];
+            $iprice = $row['iprice'];
+            $istatus = $row['istatus'];
+            $isize = $row['isize'];
+        }
+	}
 
 ?>
 <br><br>
