@@ -8,6 +8,6 @@
     $stmt= $pdo->prepare($sql);
     $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_INT);
     $stmt->execute();
-    die("You've deleted the catalogue '$cid' <a href='managecatalogue.php'>click here</a> to continue.");
+    die("You've deleted the CCatalogue '$cid' <a href='managecatalogue.php'>click here</a> to continue.");
 }
 ?>
