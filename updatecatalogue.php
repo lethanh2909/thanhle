@@ -9,7 +9,7 @@
 	    $stmt= $pdo->prepare($sql);
 	    $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_INT);
 	    $stmt->bindValue(':cname', $_POST['cname'], PDO::PARAM_STR);
-	    $stmt->execute();
+	    $pdoExec = $stmt->execute();
 	    
 	        // check 
 	    if($pdoExec)
