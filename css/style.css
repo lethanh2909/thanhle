@@ -17,12 +17,4 @@ div.address-style{
     height: 300px;  /*Cao 300px*/
     background: red;/*Nền màu đỏ*/
 }
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-  text-align: left;    
-}
 
