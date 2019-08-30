@@ -3,8 +3,8 @@
 ?>
 <table class="tbl">
     <tr>
-        <th> Name</th>
         <th> ID</th>
+        <th> Name</th>
         <th> Options</th>
     </tr>
     <?php
@@ -13,8 +13,8 @@
         $cName = $row['cname'];
         $cDescription = $row['cdescription'];
         echo "<tr>";
-        echo "<td>$cName</td>";
         echo "<td>$cId</td>";
+        echo "<td>$cName</td>";
         ?>
         <td>
             <form class="frminline" action="deletecatalogue.php" method="post" onsubmit="return confirmDelete();">
