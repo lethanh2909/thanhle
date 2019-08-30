@@ -103,12 +103,18 @@ th, td {
                 $iImage = $row['iimage'];
                 $link_image = "./images/item/$iImage";             
                 echo "<tr>";
-                echo "<td>$iId</td>";
-                echo "<td><input type="text" id="cname" name="cname" required value="<?php echo $iName; ?>" /></td>";
-                echo "<td>$iDescription</td>";
-                echo "<td>$iPrice</td>";
-                echo "<td>$iStatus</td>";
-                echo "<td>$iSize</td>";
+                echo "<td>$iId</td>";                
+                
+                <input type="text" id="iname" name="iname" required value="<?php echo $row['iName']; ?>"/><br>
+               
+                <input type="text" id="idescription" name="idescription" required value="<?php echo $row['iDescription']; ?>"/><br>
+                
+                <input type="text"  name="iprice" required value="<?php echo $row['iPrice']; ?>"/><br>
+                
+                <input type="text"  name="istatus" required value="<?php echo $row['iStatus']; ?>"/><br>
+                
+                <input type="text"  name="isize" required value="<?php echo $row['iSize']; ?>"/><br><br>
+
                 echo "<td ><img src='$link_image' width='200px'></td>";
                 ?>
                 <td>
