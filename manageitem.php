@@ -84,7 +84,7 @@ th, td {
                 <th>Status</th>
                 <th>Size</th>              
                 <th>Image</th> 
-                <th>Options</th>
+                <th colspan="2">Options</th>
             </tr>
             <?php
                 $sql = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item";
