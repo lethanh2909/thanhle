@@ -1,6 +1,7 @@
 <?php 
     include("catalogue.php");
-    include("item.php");
+    include("database.php");
+
 ?>
 <table class="tbl">
     <tr>
@@ -14,6 +15,10 @@
         <th>Options</th>
     </tr>
     <?php
+    	$sql = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item";
+        $stmt = $pdo->prepare($sql);        
+        $stmt->execute();
+
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
     {
         $iId = $row['iid'];
