@@ -92,19 +92,19 @@ th, td {
                 $stmt = $pdo->prepare($sql);        
                 $stmt->execute();
 
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-            {
-                $iId = $row['iid'];
-                $iName = $row['iname'];
-                $iDescription = $row['idescription'];
-                $iPrice = $row['iprice'];
-                $iStatus = $row['istatus'];
-                $iSize = $row['isize'];
-                $iImage = $row['iimage'];
-                $link_image = "./images/item/$iImage";             
-                echo "<tr>";
-                echo "<td>$iId</td>";                
-                
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+                {
+                    $iId = $row['iid'];
+                    $iName = $row['iname'];
+                    $iDescription = $row['idescription'];
+                    $iPrice = $row['iprice'];
+                    $iStatus = $row['istatus'];
+                    $iSize = $row['isize'];
+                    $iImage = $row['iimage'];
+                    $link_image = "./images/item/$iImage";             
+                    echo "<tr>";
+                    echo "<td>$iId</td>";                
+            ?>
                 <input type="text" id="iname" name="iname" required value="<?php echo $row['iName']; ?>"/><br>
                
                 <input type="text" id="idescription" name="idescription" required value="<?php echo $row['iDescription']; ?>"/><br>
@@ -115,8 +115,8 @@ th, td {
                 
                 <input type="text"  name="isize" required value="<?php echo $row['iSize']; ?>"/><br><br>
 
-                echo "<td ><img src='$link_image' width='200px'></td>";
-                ?>
+                <?php echo "<td ><img src='$link_image' width='200px'></td>"; ?>
+                
                 <td>
                     <form class="frminline" action="deleteitem.php" method="post" onsubmit="return confirmDelete();">
                         <input type="hidden" name="iid" value="<?php echo $row['iid'] ?>" />
