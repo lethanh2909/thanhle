@@ -104,14 +104,14 @@ th, td {
                     echo "<tr>";
                     echo "<td>$iId</td>";                
             ?>
-                <td><input type="text" size="5" id="iname" name="iname" required value="<?php echo $row['iname']; ?>"/></td>          
+                <td><input type="text" size="5" id="iname" name="iname" method="post" required value="<?php echo $row['iname']; ?>"/></td>          
                 
                 
-                <td><input type="text" size="5" name="iprice" required value="<?php echo $row['iprice']; ?>"/></td>
+                <td><input type="text" size="5" name="iprice" method="post" required value="<?php echo $row['iprice']; ?>"/></td>
                 
-                <td><input type="text" size="5" name="istatus" required value="<?php echo $row['istatus']; ?>"/></td>
+                <td><input type="text" size="5" name="istatus" method="post" required value="<?php echo $row['istatus']; ?>"/></td>
                 
-                <td><input type="text" size="5" name="isize" required value="<?php echo $row['isize']; ?>"/></td>
+                <td><input type="text" size="5" name="isize" method="post" required value="<?php echo $row['isize']; ?>"/></td>
 
                 <?php echo "<td ><img src='$link_image' width='200px'></td>"; ?>
                 

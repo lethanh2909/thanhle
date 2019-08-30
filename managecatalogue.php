@@ -18,7 +18,7 @@
         ?>        
         <td>
             <form class="frminline" action="updatecatalogue.php" method="post">
-                <input type="text" id="cname" name="cname" required value="<?php echo $cName; ?>" />
+                <input type="text" name="cname" required value="<?php echo $cName; ?>" />
                 <input type="hidden" name="cid" value="<?php echo $row['cid'] ?>" />
                 <input type="submit" value="Update" />
             </form>
