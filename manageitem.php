@@ -55,71 +55,99 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             <div class="w3-panel w3-border w3-yellow w3-round-large w3-padding-16">        
                 <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">__________________________________CATALOGUE__________________________________</p>             
 
-                
+                <?php 
+                    include("catalogue.php");
+                ?>
+
+                <?php
+                echo "<table >";
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+                {    
+                    echo "<tr>";
+                        for($i=1;$i<=7;$i++)
+                        {
+                            echo "<td width='78px'>";
+                                if($row!=false)
+                                {
+                                    $ID = $row ['cid'];
+                                    $link="?direct=show_product&id=".$ID;        
+                                    echo "<a href='$link' class='w3-button w3-green w3-border w3-round-large'>" ;
+                                    $Name = $row ['cname'];                                               
+                                    echo "$Name";
+                                }
+                                 else 
+                                {
+                                    echo "&nbsp;";
+                                }
+                            echo "</td>";
+
+                            if($i!=7)
+                            {
+                                $row = $stmt->fetch();
+                            }
+                        }
+                    echo "</tr>";
+                }
+                echo "</table>";
+                ?>
+            </div>
+        </div>
+    </div>
     
   <!-- Product container-->  
-    <?php 
-        include("catalogue.php");
-        include("database.php");
-    ?>
-<table class="tbl">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Status</th>
-        <th>Size</th>              
-        <th>Image</th> 
-        <th>Options</th>
-    </tr>
-    <?php
-        $sql = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item";
-        $stmt = $pdo->prepare($sql);        
-        $stmt->execute();
-
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-    {
-        $iId = $row['iid'];
-        $iName = $row['iname'];
-        $iDescription = $row['idescription'];
-        $iPrice = $row['iprice'];
-        $iStatus = $row['istatus'];
-        $iSize = $row['isize'];
-        $iImage = $row['iimage'];
-        $link_image = "./images/item/$iImage";             
-        echo "<tr>";
-        echo "<td>$iId</td>";
-        echo "<td>$iName</td>";
-        echo "<td>$iDescription</td>";
-        echo "<td>$iPrice</td>";
-        echo "<td>$iStatus</td>";
-        echo "<td>$iSize</td>";
-        echo "<td ><img src='$link_image' width='200px'></td>";
+    <div class="w3-bottombar">
+        <?php 
+            include("direction.php");
         ?>
-        <td>
-            <form class="frminline" action="deleteitem.php" method="post" onsubmit="return confirmDelete();">
-                <input type="hidden" name="iId" value="<?php echo $row[0] ?>" />
-                <input type="submit" value="Delete" />
-            </form>
-            <form class="frminline" action="updateitem.php" method="post">
-                <input type="hidden" name="iId" value="<?php echo $row[0] ?>" />
-                <input type="submit" value="Update" />
-            </form>
-        </td>
-        <?php
-        echo "</tr>";
-    }
-    ?>
-    <script>
-        function confirmDelete() {
-            var r = confirm("Are you sure you would like to delete ?");
-            if (r) {
-                return true;
-            } else {
-                return false;
+
+       <?php
+        echo "<table>";                
+            
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+            {    
+                echo "<tr>";
+                    for($i=1;$i<=3;$i++)
+                    {
+                        echo "<td align='center' width='328px' height='228px' >";
+                            if($row!=false)
+                            {
+                                $iId = $row['iid'];
+                                $iName = $row['iname'];
+                                $iDescription = $row['idescription'];
+                                $iPrice = $row['iprice'];
+                                $iStatus = $row['istatus'];
+                                $iSize = $row['isize'];
+                                $iImage = $row['iimage'];
+                                $link_image = "./images/item/$iImage";
+                                //$link_detail="?direct=product_detail&id=".$iId;
+
+                                echo "<a href='$link_detail'>";
+                                echo "<img src='$link_image' width='200px'>";
+                                echo "</a>";
+                                echo "<br>";  
+
+                                
+                                echo $iName;
+                                echo "</a>";
+                                echo "<br>";  
+
+                                echo "Price: ".$iPrice," $";
+                                echo "<br>";
+                            }
+                             else 
+                            {
+                                echo "&nbsp;";
+                            }
+                        echo "</td>";
+                        if($i!=3)
+                        {
+                            $row = $stmt->fetch();
+                        }
+                    }
+                echo "</tr>";
             }
-        }
-    </script>
-</table>
+        echo "</table>";
+        ?>        
+    </div> 
     <!--End of Product container-->
+    
