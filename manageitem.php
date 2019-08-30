@@ -1,5 +1,6 @@
 <?php 
     include("catalogue.php");
+    include("item.php");
 ?>
 <table class="tbl">
     <tr>
