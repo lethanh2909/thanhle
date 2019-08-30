@@ -4,7 +4,7 @@
 <?php
 	if(isset($_POST['iid'], $_POST['iname'], $_POST['iprice'], $_POST['istatus'], $_POST['isize']))
 	{
-	    $sql = "UPDATE Item SET iid = :iid, iname=:iname, iprice=:iprice, istatus=:istatus, isize=:isize WHERE iid = :iid";
+	    $sql = "UPDATE Item SET iid = :iid, iname = :iname, iprice = :iprice, istatus = :istatus, isize = :isize WHERE iid = :iid";
 	    
 	    $stmt = $pdo->prepare($sql);
 	    $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_INT);
