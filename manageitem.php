@@ -121,7 +121,7 @@ th, td {
                         <input type="submit" value="Delete" />
                     </form>
                     <form class="frminline" action="updateitem.php" method="post">
-                        <input type="hidden" name="iId" value="<?php echo $row[0] ?>" />
+                        <input type="hidden" name="iId" value="<?php echo $row['iid'] ?>" />
                         <input type="submit" value="Update" />
                     </form>
                 </td>
