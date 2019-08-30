@@ -18,7 +18,7 @@
 	        // check 
 	    if($pdoExec)
 	    {
-	        die("You've updated the Item '$cid' <a href='managecatalogue.php'>click here</a> to continue.");
+	        die("You've updated the Item '$cid' <a href='manageitem.php'>click here</a> to continue.");
 	    }else{
 	        echo 'Data Not updated';
 	    }
