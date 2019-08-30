@@ -105,15 +105,15 @@ th, td {
                     echo "<tr>";
                     echo "<td>$iId</td>";                
             ?>
-                <input type="text" id="iname" name="iname" required value="<?php echo $row['iName']; ?>"/><br>
+                <td><input type="text" id="iname" name="iname" required value="<?php echo $row['iName']; ?>"/></td>
                
-                <input type="text" id="idescription" name="idescription" required value="<?php echo $row['iDescription']; ?>"/><br>
+                <td><input type="text" id="idescription" name="idescription" required value="<?php echo $row['iDescription']; ?>"/></td>
                 
-                <input type="text"  name="iprice" required value="<?php echo $row['iPrice']; ?>"/><br>
+                <td><input type="text"  name="iprice" required value="<?php echo $row['iPrice']; ?>"/></td>
                 
-                <input type="text"  name="istatus" required value="<?php echo $row['iStatus']; ?>"/><br>
+                <td><input type="text"  name="istatus" required value="<?php echo $row['iStatus']; ?>"/></td>
                 
-                <input type="text"  name="isize" required value="<?php echo $row['iSize']; ?>"/><br><br>
+                <td><input type="text"  name="isize" required value="<?php echo $row['iSize']; ?>"/></td>
 
                 <?php echo "<td ><img src='$link_image' width='200px'></td>"; ?>
                 
