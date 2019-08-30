@@ -1,5 +1,5 @@
 <?php 
-    include("database.php");
+    include("database.php");    
 ?>
 <?php	
 	if( isset($_POST['cid'], $_POST['cname']))
@@ -14,7 +14,7 @@
 	        // check 
 	    if($pdoExec)
 	    {
-	        die("You've updatted the Catalogue '$cid' <a href='managecatalogue.php'>click here</a> to continue.");
+	        die("You've updated the Catalogue '$cid' <a href='managecatalogue.php'>click here</a> to continue.");
 	    }else{
 	        echo 'Data Not updated';
 	    }
