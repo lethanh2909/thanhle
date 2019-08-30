@@ -104,7 +104,7 @@ th, td {
                 $link_image = "./images/item/$iImage";             
                 echo "<tr>";
                 echo "<td>$iId</td>";
-                echo "<td>$iName</td>";
+                echo "<td><input type="text" id="cname" name="cname" required value="<?php echo $iName; ?>" /></td>";
                 echo "<td>$iDescription</td>";
                 echo "<td>$iPrice</td>";
                 echo "<td>$iStatus</td>";
