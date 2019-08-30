@@ -107,7 +107,7 @@ th, td {
             ?>
                 <td><input type="text" id="iname" name="iname" required value="<?php echo $row['iname']; ?>"/></td>
                
-                <td><input type="text" id="idescription" name="idescription" required value="<?php echo $row['idescription']; ?>"/></td>
+                <td><input type="text" size="5" id="idescription" name="idescription" required value="<?php echo $row['idescription']; ?>"/></td>
                 
                 <td><input type="text"  name="iprice" required value="<?php echo $row['iprice']; ?>"/></td>
                 
