@@ -14,7 +14,7 @@
 	        // check 
 	    if($pdoExec)
 	    {
-	        include("managecatalogue.php");
+	        die("You've updatted the Catalogue '$cid' <a href='managecatalogue.php'>click here</a> to continue.");
 	    }else{
 	        echo 'Data Not updated';
 	    }
