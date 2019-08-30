@@ -118,7 +118,7 @@ th, td {
             
                 <?php echo "<td ><img src='$link_image' width='200px'></td>"; ?>
 
-                <input type="submit" value="Update" />
+                <td><input type="submit" value="Update" /></td>
             </form>    
                 <td>
                     <form class="frminline" action="deleteitem.php" method="post" onsubmit="return confirmDelete();">
