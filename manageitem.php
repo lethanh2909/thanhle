@@ -13,6 +13,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
+
 }
 th, td {
   padding: 5px;
@@ -75,7 +76,7 @@ th, td {
             include("database.php");
 
         ?>
-        <table>
+        <table align='center'>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
