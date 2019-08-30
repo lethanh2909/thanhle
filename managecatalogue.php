@@ -22,7 +22,7 @@
                 <input type="submit" value="Delete" />
             </form>
             <form class="frminline" action="" method="post">
-                <input type="hidden" name="cId" value="<?php echo $row['cid'] ?>" />
+                <input type="text" id="cName" name="cName" required value="<?php echo $cName; ?>" />
                 <input type="submit" value="Update" />
             </form>
         </td>
