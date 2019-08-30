@@ -67,7 +67,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             include("database.php");
 
         ?>
-        <table class="tbl">
+        <table>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
