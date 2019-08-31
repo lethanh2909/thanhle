@@ -11,7 +11,7 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
-nav ul {
+ul {
     list-style: none;
 }
 nav ul ul {
@@ -77,7 +77,7 @@ nav ul li:hover>ul{
             
             <div class="w3-panel w3-border w3-yellow w3-round-large w3-padding-16">        
                 <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">__________________________________CATALOGUE__________________________________</p>             
-                    
+                <nav>    
                     <ul>
                         <li>
                             <a href="">Manage Catalogue</a>
@@ -95,7 +95,7 @@ nav ul li:hover>ul{
                         </li>
                         <li><a href="index.php">Logout</a></li>
                     </ul>
-                                    
+                </nav>                    
             </div>
         </div>
     </div>
