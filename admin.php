@@ -12,11 +12,7 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+    list-style: none;
 }
 nav ul ul {
     position : absolute;
@@ -80,7 +76,7 @@ nav ul li:hover>ul{
         <div class="w3-bottombar">
             
             <div class="w3-panel w3-border w3-yellow w3-round-large w3-padding-16">        
-                <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">__________________________________CATALOGUE__________________________________</p>             
+                <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">___________________________________MENU___________________________________</p>             
                 <nav>    
                     <ul>
                         <li>
