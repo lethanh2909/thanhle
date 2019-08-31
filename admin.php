@@ -20,13 +20,15 @@ nav ul ul {
     display : none;
 }
 nav ul li {
-    float : left;
+    text-align: center;
+    
     padding : 5px;
 }
 nav ul li:hover{
     background-color: #f6f6f6;
 }
 nav ul li ul li{
+    text-align: center;
     float : none;
 }
 nav ul li:hover>ul{
