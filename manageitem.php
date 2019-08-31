@@ -10,6 +10,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+ul {
+    list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #009933;
+}
+nav ul ul {
+    position : absolute;
+    padding : 0;
+    display : none;
+}
+nav ul li {
+    float : left;
+    padding : 5px;
+}
+nav ul li:hover{
+    background-color: #ffffff;
+}
+nav ul li ul li{
+    float : none;
+}
+nav ul li:hover>ul{
+    display: block;
+    background-color: #009933;
+}
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
@@ -62,9 +89,26 @@ th, td {
         <div class="w3-bottombar">
             
             <div class="w3-panel w3-border w3-yellow w3-round-large w3-padding-16">        
-                <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">__________________________________CATALOGUE__________________________________</p>             
-
-                
+                <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">___________________________________MENU___________________________________</p>             
+                <nav>    
+                    <ul>
+                        <li>
+                            <a href="">Manage Catalogue</a>
+                            <ul>
+                                <li><a href="addcatalogue.php">Add Catalogue</a></li>
+                                <li><a href="managecatalogue.php">Update/Delete catalogue</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Manage Items</a>
+                            <ul>
+                                <li><a href="additem.php">Add Item</a></li>
+                                <li><a href="manageitem.php">View/Search/Update/Delete item</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.php">Logout</a></li>
+                    </ul>
+                </nav>                    
             </div>
         </div>
     </div>
