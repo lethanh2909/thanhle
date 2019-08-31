@@ -121,7 +121,7 @@ th, td {
         <tr>
             <th> ID</th>
             <th> Name</th>
-            <th> Options</th>
+            <th colspan="2"> Options</th>
         </tr>
         <?php
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
