@@ -12,7 +12,11 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 ul {
-    list-style: none;
+    list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #009933;
 }
 nav ul ul {
     position : absolute;
@@ -20,15 +24,13 @@ nav ul ul {
     display : none;
 }
 nav ul li {
-    text-align: center;
-    
+    float : left;
     padding : 5px;
 }
 nav ul li:hover{
-    background-color: #f6f6f6;
+    background-color: #009933;
 }
 nav ul li ul li{
-    text-align: center;
     float : none;
 }
 nav ul li:hover>ul{
