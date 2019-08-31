@@ -54,25 +54,25 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             
             <div class="w3-panel w3-border w3-yellow w3-round-large w3-padding-16">        
                 <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">__________________________________CATALOGUE__________________________________</p>             
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="">Manage Catalogue</a>
-                                <ul>
-                                    <li><a href="addcatalogue.php">Add Catalogue</a></li>
-                                    <li><a href="managecatalogue.php">Update/Delete catalogue</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="">Manage Items</a>
-                                <ul>
-                                    <li><a href="additem.php">Add Item</a></li>
-                                    <li><a href="manageitem.php">View/Search/Update/Delete item</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="index.php">Logout</a></li>
-                        </ul>
-                    </nav>                
+                    
+                    <ul>
+                        <li>
+                            <a href="">Manage Catalogue</a>
+                            <ul>
+                                <li><a href="addcatalogue.php">Add Catalogue</a></li>
+                                <li><a href="managecatalogue.php">Update/Delete catalogue</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Manage Items</a>
+                            <ul>
+                                <li><a href="additem.php">Add Item</a></li>
+                                <li><a href="manageitem.php">View/Search/Update/Delete item</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.php">Logout</a></li>
+                    </ul>
+                                    
             </div>
         </div>
     </div>
