@@ -10,6 +10,29 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+nav ul {
+    list-style: none;
+}
+nav ul ul {
+    position : absolute;
+    padding : 0;
+    display : none;
+}
+nav ul li {
+    float : left;
+    padding : 5px;
+}
+nav ul li:hover{
+    background-color: #f6f6f6;
+}
+nav ul li ul li{
+    float : none;
+}
+nav ul li:hover>ul{
+    display: block;
+    background-color: #ffffff;
+}
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
