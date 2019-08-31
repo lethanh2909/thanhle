@@ -22,20 +22,22 @@ nav ul ul {
     position : absolute;
     padding : 0;
     display : none;
+    color: #fff
 }
 nav ul li {
     float : left;
     padding : 5px;
 }
 nav ul li:hover{
-    background-color: #009933;
+    background-color: #ffffff;
 }
 nav ul li ul li{
+    color: #fff;
     float : none;
 }
 nav ul li:hover>ul{
     display: block;
-    background-color: #ffffff;
+    background-color: #009933;
 }
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
