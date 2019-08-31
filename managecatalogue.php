@@ -138,8 +138,7 @@ th, td {
                     <input type="hidden" name="cid" value="<?php echo $row['cid'] ?>" />
                     <input type="submit" value="Update" />
                 </form>
-            </td>
-            <td>
+            
                 <form class="frminline" action="deletecatalogue.php" method="post" onsubmit="return confirmDelete();">
                     <input type="hidden" name="cid" value="<?php echo $row['cid'] ?>" />
                     <input type="submit" value="Delete" />
