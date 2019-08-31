@@ -17,13 +17,11 @@ ul {
       padding: 0;
       overflow: hidden;
       background-color: #009933;
-      color: #fff
 }
 nav ul ul {
     position : absolute;
     padding : 0;
     display : none;
-    color: #fff
 }
 nav ul li {
     float : left;
@@ -33,7 +31,6 @@ nav ul li:hover{
     background-color: #ffffff;
 }
 nav ul li ul li{
-    
     float : none;
 }
 nav ul li:hover>ul{
