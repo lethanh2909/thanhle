@@ -121,7 +121,7 @@ th, td {
         {
             $iimage = "";
             $extension = "";
-            
+
             if (isset($_FILES['iimage']) && $_FILES['iimage']['size'] != 0) {
                 $temp_name = $_FILES['iimage']['tmp_name'];
                 $name = $_FILES['iimage']['name'];
@@ -133,15 +133,15 @@ th, td {
         //Move the file from temp loc => to our image folder
                 move_uploaded_file($temp_name, $destination);
             }
-            
-            
-            
-            
+
+
+
+
     // mysql query to insert data
 
             $sql = "INSERT INTO Item (iid, iname, idescription, iprice, istatus, isize, iimage, catalogueid) 
             values (:iid, :iname, :idescription, :iprice, :istatus, :isize, :iimage, :catalogueid)";
-            
+
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
             $stmt->bindValue(':iname', $_POST['iname'], PDO::PARAM_STR);
@@ -152,7 +152,7 @@ th, td {
             $stmt->bindValue(':iimage', $_POST['iimage'], PDO::PARAM_STR);
             $stmt->bindValue(':catalogueid', $_POST['catalogueid'], PDO::PARAM_STR);
             $pdoExec = $stmt->execute();
-            
+
         // check if mysql insert query successful
             if($pdoExec)
             {
@@ -179,7 +179,7 @@ th, td {
 
         </head>
         <body>
-            <form action="additem.php" method="post">
+            <form align='center' action="additem.php" method="post">
 
                 <input type="text" name="iid" required placeholder="ID"><br><br>
 
