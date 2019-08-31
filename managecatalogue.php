@@ -132,13 +132,13 @@ th, td {
             echo "<td>$cId</td>";
             
             ?>        
-            <td>
+            
                 <form class="frminline" action="updatecatalogue.php" method="post">
-                    <input type="text" name="cname" required value="<?php echo $cName; ?>" />
+                    <td><input type="text" name="cname" required value="<?php echo $cName; ?>" /></td>
                     <input type="hidden" name="cid" value="<?php echo $row['cid'] ?>" />
                     <td><input type="submit" value="Update" /></td>
                 </form>
-            </td>
+           
             <td>
                 <form class="frminline" action="deletecatalogue.php" method="post" onsubmit="return confirmDelete();">
                     <input type="hidden" name="cid" value="<?php echo $row['cid'] ?>" />
