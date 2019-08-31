@@ -17,6 +17,7 @@ ul {
       padding: 0;
       overflow: hidden;
       background-color: #009933;
+      color: #fff
 }
 nav ul ul {
     position : absolute;
@@ -32,7 +33,7 @@ nav ul li:hover{
     background-color: #ffffff;
 }
 nav ul li ul li{
-    color: #fff;
+    
     float : none;
 }
 nav ul li:hover>ul{
