@@ -18,21 +18,24 @@ ul {
     overflow: hidden;
     background-color: #333;
 }
-li {
-  float: left;
+nav ul ul {
+    position : absolute;
+    padding : 0;
+    display : none;
 }
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+nav ul li {
+    float : left;
+    padding : 5px;
 }
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
+nav ul li:hover{
+    background-color: #f6f6f6;
+}
+nav ul li ul li{
+    float : none;
+}
+nav ul li:hover>ul{
+    display: block;
+    background-color: #ffffff;
 }
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
