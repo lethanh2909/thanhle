@@ -49,7 +49,7 @@
     
         <div class="w3-container ">
             <div class="w3-panel w3-sand w3-padding-16">
-                <h1 style="text-align: center; font-family: Bahnschrift">WELCOME TO THE WORLD OF LEGO</h1>
+                <h1 style="text-align: center; font-family: Bahnschrift">WELCOME TO THE ATN SHOP</h1>
             </div>
         <div class="w3-content w3-section " style="max-width:750px">
                 <img class="mySlides" src="images/lego1.jpg" style="width:100%">
@@ -71,9 +71,9 @@
         <img src="images/About.PNG" style="width:70%; border-style: solid; border-color: black">
     </div>
     <div class="w3-col m8 about-style">
-        <h4><b>ABOUT THE LEGO WORLD</b></h4>
+        <h4><b>ABOUT THE ATN SHOP</b></h4>
         <p>
-            The LEGO WORLD is a privately held, family-owned company with headquarters in Billund, Denmark, and main offices in Enfield, USA, London, UK, Shanghai, China, and Singapore. Founded in 1932 by Ole Kirk Kristiansen, and based on the iconic LEGO® brick, it is one of the world's leading manufacturers of play materials.
+            The ATN shop is a privately held, family-owned company with headquarters in Billund, Denmark, and main offices in Enfield, USA, London, UK, Shanghai, China, and Singapore. Founded in 1932 by Ole Kirk Kristiansen, and based on the iconic LEGO® brick, it is one of the world's leading manufacturers of play materials.
         </p>
     </div>
   </div>
